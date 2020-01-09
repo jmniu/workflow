@@ -11,7 +11,7 @@ import (
 
 func init() {
 	flow.Init(
-		db.SetDSN("root:123456@tcp(127.0.0.1:3306)/flow_test?charset=utf8"),
+		db.SetDSN("root:111111@tcp(127.0.0.1:3306)/db_flow_github?charset=utf8"),
 		db.SetTrace(false),
 	)
 
