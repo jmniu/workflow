@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/antlinker/flow"
-	"github.com/antlinker/flow/service/db"
+	"github.com/jmniu/go-workflow"
+	"github.com/jmniu/go-workflow/service/db"
 	_ "github.com/go-sql-driver/mysql"
 )
 

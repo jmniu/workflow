@@ -9,7 +9,7 @@ import (
 	"syscall"
 
 	"github.com/qiniu/text/tpl/interpreter"
-	"github.com/antlinker/flow/qlang/exec"
+	"github.com/jmniu/go-workflow/qlang/exec"
 )
 
 // -----------------------------------------------------------------------------

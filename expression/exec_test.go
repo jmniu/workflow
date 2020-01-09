@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/antlinker/flow/expression"
+	"github.com/jmniu/go-workflow/expression"
 )
 
 func TestMain(m *testing.M) {

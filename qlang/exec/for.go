@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	qlang "github.com/antlinker/flow/qlang/spec"
+	qlang "github.com/jmniu/go-workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

@@ -3,7 +3,7 @@ package qlang
 import (
 	"strconv"
 
-	"github.com/antlinker/flow/qlang/exec"
+	"github.com/jmniu/go-workflow/qlang/exec"
 )
 
 // -----------------------------------------------------------------------------

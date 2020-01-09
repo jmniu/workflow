@@ -1,8 +1,8 @@
 package qlang
 
 import (
-	"github.com/antlinker/flow/qlang/exec"
-	qlang "github.com/antlinker/flow/qlang/spec"
+	"github.com/jmniu/go-workflow/qlang/exec"
+	qlang "github.com/jmniu/go-workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

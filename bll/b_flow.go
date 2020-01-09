@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/antlinker/flow/model"
-	"github.com/antlinker/flow/schema"
-	"github.com/antlinker/flow/util"
+	"github.com/jmniu/go-workflow/model"
+	"github.com/jmniu/go-workflow/schema"
+	"github.com/jmniu/go-workflow/util"
 )
 
 // Flow 流程管理

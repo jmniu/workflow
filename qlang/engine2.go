@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/antlinker/flow/qlang/exec"
+	"github.com/jmniu/go-workflow/qlang/exec"
 	"github.com/qiniu/text/tpl/interpreter"
 
-	qcl "github.com/antlinker/flow/qlang/cl"
-	qlang "github.com/antlinker/flow/qlang/spec"
+	qcl "github.com/jmniu/go-workflow/qlang/cl"
+	qlang "github.com/jmniu/go-workflow/qlang/spec"
 )
 
 // Options represent interpreter options.

@@ -3,7 +3,7 @@ package builtin
 import (
 	"fmt"
 
-	"github.com/antlinker/flow/qlang"
+	"github.com/jmniu/go-workflow/qlang"
 )
 
 // Reg 注册内置函数，不注册不能使用

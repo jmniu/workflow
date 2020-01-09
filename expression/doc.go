@@ -1,6 +1,6 @@
 package expression
 
 import (
-	_ "github.com/antlinker/flow/expression/builtin"
-	_ "github.com/antlinker/flow/qlang/lib/builtin"
+	_ "github.com/jmniu/go-workflow/expression/builtin"
+	_ "github.com/jmniu/go-workflow/qlang/lib/builtin"
 )

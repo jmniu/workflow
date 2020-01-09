@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/antlinker/flow"
-	"github.com/antlinker/flow/service/db"
+	"github.com/jmniu/go-workflow"
+	"github.com/jmniu/go-workflow/service/db"
 
 	"github.com/teambition/gear"
 

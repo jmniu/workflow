@@ -7,7 +7,7 @@ import (
 
 	"github.com/qiniu/qlang"
 	"github.com/qiniu/qlang/cl/interpreter"
-	"github.com/antlinker/flow/qlang/exec"
+	"github.com/jmniu/go-workflow/qlang/exec"
 	"github.com/qiniu/qlang/lib/eqlang"
 	"github.com/qiniu/qlang/lib/qlang.all"
 )

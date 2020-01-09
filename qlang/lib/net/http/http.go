@@ -3,7 +3,7 @@ package http
 import (
 	"net/http"
 
-	qlang "github.com/antlinker/flow/qlang/spec"
+	qlang "github.com/jmniu/go-workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

@@ -6,7 +6,7 @@ import (
 
 	"github.com/qiniu/qlang"
 	"github.com/qiniu/qlang/lib/math"
-	qspec "github.com/antlinker/flow/qlang/spec"
+	qspec "github.com/jmniu/go-workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

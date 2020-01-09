@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/antlinker/flow/schema"
+	"github.com/jmniu/go-workflow/schema"
 	"github.com/teambition/gear"
 )
 

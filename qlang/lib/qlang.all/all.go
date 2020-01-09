@@ -23,7 +23,7 @@ import (
 	"github.com/qiniu/qlang/lib/terminal"
 	"github.com/qiniu/qlang/lib/tpl/extractor"
 	"github.com/qiniu/qlang/lib/version"
-	qlang "github.com/antlinker/flow/qlang/spec"
+	qlang "github.com/jmniu/go-workflow/qlang/spec"
 
 	// qlang builtin modules
 	_ "github.com/qiniu/qlang/lib/builtin"

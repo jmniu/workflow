@@ -1,4 +1,4 @@
-module github.com/antlinker/flow
+module github.com/jmniu/go-workflow
 
 go 1.13
 

@@ -103,7 +103,7 @@ func CheckUpdateInfo(pkgname string, pkg string) (*UpdateInfo, error) {
 		if decl == nil {
 			return nil
 		}
-		specImport := w.FindImportName(file, "github.com/antlinker/flow/qlang/spec")
+		specImport := w.FindImportName(file, "github.com/jmniu/go-workflow/qlang/spec")
 		endImportPos := w.FindImportEndPos(file)
 		pos := w.FileSet.Position(decl.End())
 		_, pos.Filename = filepath.Split(pos.Filename)

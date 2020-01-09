@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/antlinker/flow/schema"
-	"github.com/antlinker/flow/service/db"
+	"github.com/jmniu/go-workflow/schema"
+	"github.com/jmniu/go-workflow/service/db"
 	"github.com/pkg/errors"
 )
 

@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/antlinker/flow/expression"
+	"github.com/jmniu/go-workflow/expression"
 
-	"github.com/antlinker/flow/qlang"
+	"github.com/jmniu/go-workflow/qlang"
 )
 
 // execDB 从ctx获取数据库

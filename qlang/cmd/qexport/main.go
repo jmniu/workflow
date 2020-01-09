@@ -510,7 +510,7 @@ var Exports = map[string]interface{}{
 		if verHasTypeExport[ver] {
 			buf.WriteString("import (\n")
 			buf.WriteString(fmt.Sprintf("\t%q\n\n", bp.ImportPath))
-			buf.WriteString(fmt.Sprintf("\tqlang %q\n", "github.com/antlinker/flow/qlang/spec"))
+			buf.WriteString(fmt.Sprintf("\tqlang %q\n", "github.com/jmniu/go-workflow/qlang/spec"))
 			buf.WriteString(")\n")
 		} else {
 			buf.WriteString(fmt.Sprintf("import %q\n", bp.ImportPath))

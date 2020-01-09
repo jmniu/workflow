@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/antlinker/flow/schema"
+	"github.com/jmniu/go-workflow/schema"
 	"github.com/pkg/errors"
 )
 

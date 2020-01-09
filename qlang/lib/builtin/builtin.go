@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"strings"
 
-	qlang "github.com/antlinker/flow/qlang/spec"
-	"github.com/antlinker/flow/qlang/spec/types"
+	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	"github.com/jmniu/go-workflow/qlang/spec/types"
 )
 
 // -----------------------------------------------------------------------------

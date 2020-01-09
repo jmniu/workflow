@@ -12,11 +12,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/antlinker/flow/bll"
-	"github.com/antlinker/flow/register"
-	"github.com/antlinker/flow/schema"
-	"github.com/antlinker/flow/service/db"
-	"github.com/antlinker/flow/util"
+	"github.com/jmniu/go-workflow/bll"
+	"github.com/jmniu/go-workflow/register"
+	"github.com/jmniu/go-workflow/schema"
+	"github.com/jmniu/go-workflow/service/db"
+	"github.com/jmniu/go-workflow/util"
 	"github.com/facebookgo/inject"
 	"github.com/pkg/errors"
 )

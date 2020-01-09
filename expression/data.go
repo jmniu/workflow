@@ -8,7 +8,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/antlinker/flow/qlang/spec"
+	"github.com/jmniu/go-workflow/qlang/spec"
 )
 
 // OutData 输出数据
