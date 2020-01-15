@@ -8,11 +8,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/qiniu/qlang"
-	"github.com/qiniu/qlang/lib/terminal"
+	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/go-workflow/qlang/lib/terminal"
 
-	qipt "github.com/qiniu/qlang/cl/interpreter"
-	qall "github.com/qiniu/qlang/lib/qlang.all"
+	qipt "github.com/jmniu/go-workflow/qlang/cl/interpreter"
+	qall "github.com/jmniu/go-workflow/qlang/lib/qlang.all"
 )
 
 var (

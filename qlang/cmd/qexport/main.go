@@ -468,7 +468,7 @@ func export(pkg string, outpath string, skipOSArch bool) error {
 			outHeadf("\t%q\n", pkg)
 			//check qlang used
 			if hasTypeExport {
-				outHeadf("\n\tqlang \"github.com/qiniu/qlang/spec\"\n")
+				outHeadf("\n\tqlang \"github.com/jmniu/go-workflow/qlang/spec\"\n")
 			}
 			outHeadf(")\n\n")
 		}

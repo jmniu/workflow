@@ -3,8 +3,8 @@ package qlang_test
 import (
 	"testing"
 
-	"github.com/qiniu/qlang"
-	_ "github.com/qiniu/qlang/lib/builtin"
+	"github.com/jmniu/go-workflow/qlang"
+	_ "github.com/jmniu/go-workflow/qlang/lib/builtin"
 )
 
 // -----------------------------------------------------------------------------

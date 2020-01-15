@@ -5,8 +5,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/qiniu/qlang"
-	_ "github.com/qiniu/qlang/lib/builtin" // 导入 builtin 包
+	"github.com/jmniu/go-workflow/qlang"
+	_ "github.com/jmniu/go-workflow/qlang/lib/builtin" // 导入 builtin 包
 )
 
 // -----------------------------------------------------------------------------

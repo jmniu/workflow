@@ -5,7 +5,7 @@ import (
 	"reflect"
 
 	qlang "github.com/jmniu/go-workflow/qlang/spec"
-	"github.com/qiniu/qlang/spec/types"
+	"github.com/jmniu/go-workflow/qlang/spec/types"
 )
 
 // -----------------------------------------------------------------------------

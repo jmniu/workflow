@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/qiniu/qlang"
-	"github.com/qiniu/qlang/lib/math"
+	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/go-workflow/qlang/lib/math"
 	qspec "github.com/jmniu/go-workflow/qlang/spec"
 )
 

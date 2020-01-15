@@ -56,7 +56,7 @@ func (i *InsertInfo) UpdateFile(outpath string, data []byte, hasTypeExport bool)
 
 	out := insertData(all, data, i.pos.Offset)
 	if hasTypeExport && i.specImportName == "" {
-		spec := []byte("\n\nqlang \"github.com/qiniu/qlang/spec\"\n")
+		spec := []byte("\n\nqlang \"github.com/jmniu/go-workflow/qlang/spec\"\n")
 		out = insertData(out, spec, i.importPos.Offset+1)
 	}
 
