@@ -234,6 +234,11 @@ func (a *Flow) QueryTodo(typeCode, flowCode, userID string, count int) ([]*schem
 	return a.FlowModel.QueryTodo(typeCode, flowCode, userID, count)
 }
 
+// QueryTodoPaginate 分页查询用户待办节点实例数据
+func (a *Flow) QueryTodoPaginate(typeCode string, flowCode string, userID string, page int, pageSize int) (int, []*schema.FlowTodoResult, error)  {
+	return a.FlowModel.QueryTodoPaginate(typeCode, flowCode, userID, page, pageSize)
+}
+
 // GetTodoByID 根据ID获取待办
 func (a *Flow) GetTodoByID(nodeInstanceID string) (*schema.FlowTodoResult, error) {
 	return a.FlowModel.GetTodoByID(nodeInstanceID)
