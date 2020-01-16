@@ -36,10 +36,11 @@ func init() {
 		panic(err)
 	}
 
-	err = flow.LoadFile("test_data/childprocess.bpmn")
-	if err != nil {
-		panic(err)
-	}
+	//不支持子流程
+	//err = flow.LoadFile("test_data/childprocess.bpmn")
+	//if err != nil {
+	//	panic(err)
+	//}
 }
 
 func TestRepair(t *testing.T) {
