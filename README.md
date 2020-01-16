@@ -1,4 +1,15 @@
 # 工作流引擎
+本项目是根据github.com/antlinker/flow演变而来，原来的项目长时间不更新，并且代码qlang部分无法跑通，所以新开了这个项目进行开发
+
+如果您有什么疑问，请联系wx：debugall，注明【go-workflow】，谢谢
+
+目前这个项目支持如下类型：
+
+1. 开始/结束/终止事件
+2. 人工任务
+3. 排他网关/并行网关
+
+注：暂时不支持子流程，后续有支持计划
 
 ## 工作流设计器
 
@@ -8,7 +19,7 @@
 ## 获取项目
 
 ```bash
-go get github.com/antlinker/flow
+go get github.com/jmniu/go-workflow
 ```
 
 ## 使用
@@ -16,14 +27,12 @@ go get github.com/antlinker/flow
 ### 1. 初始化工作流引擎
 
 ```go
+package main
 import (
-	"time"
-
-	"ant-flow"
-	"ant-flow/service/db"
-	_ "github.com/go-sql-driver/mysql"
+    "github.com/jmniu/go-workflow"
+    "github.com/jmniu/go-workflow/service/db"
+    _ "github.com/go-sql-driver/mysql"
 )
-
 func main() {
 	flow.Init(
 		db.SetDSN("root:123456@tcp(127.0.0.1:3306)/flows?charset=utf8"),
