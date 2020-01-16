@@ -103,6 +103,13 @@ func QueryTodoFlows(flowCode, userID string) ([]*schema.FlowTodoResult, error) {
 	return engine.QueryTodoFlows(flowCode, userID)
 }
 
+// QueryTodoFlowsPaginate 分页查询流程待办数据
+// flowCode 流程编号
+// userID 待办人
+func QueryTodoFlowsPaginate(flowCode, userID string, page int, pageSize int) (int, []*schema.FlowTodoResult, error) {
+	return engine.QueryTodoFlowsPaginate(flowCode, userID, page, pageSize)
+}
+
 // QueryFlowHistory 查询流程历史数据
 // flowInstanceID 流程实例内码
 func QueryFlowHistory(flowInstanceID string) ([]*schema.FlowHistoryResult, error) {
