@@ -2,6 +2,7 @@ package flow_test
 
 import (
 	"encoding/json"
+	"fmt"
 	"testing"
 
 	"github.com/jmniu/go-workflow"
@@ -29,6 +30,43 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+
+	err = flow.LoadFile("test_data/repair.bpmn")
+	if err != nil {
+		panic(err)
+	}
+
+	err = flow.LoadFile("test_data/childprocess.bpmn")
+	if err != nil {
+		panic(err)
+	}
+}
+
+func TestRepair(t *testing.T) {
+	var flowCode = "id_process_repair"
+	var input = map[string]interface{}{
+		"repair": "niujiaming",
+	}
+	result, err := flow.StartFlow(flowCode, "id_start", "niujiaming", input)
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+	fmt.Printf("%v", result)
+
+
+	input["verify"] = "niujiaming"
+	result, err = flow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
+	input["ok"] = true
+	result, err = flow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)
+	if err != nil {
+		t.Fatal(err.Error())
+	}
+
+	fmt.Printf("%v", result)
 }
 
 func TestLeaveBzrApprovalPass(t *testing.T) {
