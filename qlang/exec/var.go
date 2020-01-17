@@ -3,7 +3,7 @@ package exec
 import (
 	"errors"
 
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	qlang "github.com/jmniu/workflow/qlang/spec"
 )
 
 var (

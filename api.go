@@ -1,11 +1,11 @@
-package flow
+package workflow
 
 import (
 	"errors"
 	"net/http"
 	"strconv"
 
-	"github.com/jmniu/go-workflow/schema"
+	"github.com/jmniu/workflow/schema"
 	"github.com/teambition/gear"
 )
 

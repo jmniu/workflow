@@ -1,13 +1,13 @@
-package flow
+package workflow
 
 import (
 	"context"
 	"encoding/json"
 	"net/http"
 
-	"github.com/jmniu/go-workflow/expression/sql"
-	"github.com/jmniu/go-workflow/schema"
-	"github.com/jmniu/go-workflow/service/db"
+	"github.com/jmniu/workflow/expression/sql"
+	"github.com/jmniu/workflow/schema"
+	"github.com/jmniu/workflow/service/db"
 )
 
 var (

@@ -1,9 +1,9 @@
-package flow
+package workflow
 
 import (
 	"context"
 
-	"github.com/jmniu/go-workflow/expression"
+	"github.com/jmniu/workflow/expression"
 )
 
 type (

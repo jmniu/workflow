@@ -3,7 +3,7 @@ package builtin
 import (
 	"fmt"
 
-	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/workflow/qlang"
 )
 
 // Reg 注册内置函数，不注册不能使用

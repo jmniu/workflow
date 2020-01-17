@@ -2,7 +2,7 @@ package exec
 
 import (
 	"testing"
-	"github.com/jmniu/go-workflow/qlang/lib/builtin"
+	"github.com/jmniu/workflow/qlang/lib/builtin"
 )
 
 // -----------------------------------------------------------------------------

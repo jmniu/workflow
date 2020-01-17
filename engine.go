@@ -1,4 +1,4 @@
-package flow
+package workflow
 
 import (
 	"context"
@@ -12,11 +12,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jmniu/go-workflow/bll"
-	"github.com/jmniu/go-workflow/register"
-	"github.com/jmniu/go-workflow/schema"
-	"github.com/jmniu/go-workflow/service/db"
-	"github.com/jmniu/go-workflow/util"
+	"github.com/jmniu/workflow/bll"
+	"github.com/jmniu/workflow/register"
+	"github.com/jmniu/workflow/schema"
+	"github.com/jmniu/workflow/service/db"
+	"github.com/jmniu/workflow/util"
 	"github.com/facebookgo/inject"
 	"github.com/pkg/errors"
 )

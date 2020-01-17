@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/workflow/qlang"
 
 	"github.com/pkg/errors"
 )

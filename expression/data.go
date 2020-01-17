@@ -8,7 +8,7 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/jmniu/go-workflow/qlang/spec"
+	"github.com/jmniu/workflow/qlang/spec"
 )
 
 // OutData 输出数据

@@ -11,14 +11,14 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/jmniu/go-workflow/qlang/exec"
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	"github.com/jmniu/workflow/qlang/exec"
+	qlang "github.com/jmniu/workflow/qlang/spec"
 )
 
 // Exports is the export table of this module.
 //
 var Exports = map[string]interface{}{
-	"_name":   "github.com/jmniu/go-workflow/qlang/lib/meta",
+	"_name":   "github.com/jmniu/workflow/qlang/lib/meta",
 	"fnlist":  FnList,
 	"fntable": FnTable,
 	"pkgs":    GoPkgList,

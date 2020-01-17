@@ -1,4 +1,4 @@
-module github.com/jmniu/go-workflow
+module github.com/jmniu/workflow
 
 go 1.13
 

@@ -3,7 +3,7 @@ package builtin
 import (
 	"fmt"
 
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	qlang "github.com/jmniu/workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

@@ -1,10 +1,10 @@
-package flow
+package workflow
 
 import (
 	"context"
 	"encoding/json"
 
-	"github.com/jmniu/go-workflow/schema"
+	"github.com/jmniu/workflow/schema"
 	"github.com/pkg/errors"
 )
 

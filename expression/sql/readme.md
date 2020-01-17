@@ -3,8 +3,8 @@
 ``` go
 
 import (
-    "github.com/jmniu/go-workflow/expression"
-    "github.com/jmniu/go-workflow/expression/sql"
+    "github.com/jmniu/workflow/expression"
+    "github.com/jmniu/workflow/expression/sql"
 )
 // db 为已经初始化后的数据库连接
 sql.Reg(db)

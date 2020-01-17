@@ -2,7 +2,7 @@ package qlang
 
 import (
 	"github.com/qiniu/text/tpl/interpreter.util"
-	"github.com/jmniu/go-workflow/qlang/exec"
+	"github.com/jmniu/workflow/qlang/exec"
 )
 
 // -----------------------------------------------------------------------------

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jmniu/go-workflow/schema"
-	"github.com/jmniu/go-workflow/service/db"
+	"github.com/jmniu/workflow/schema"
+	"github.com/jmniu/workflow/service/db"
 	"github.com/pkg/errors"
 )
 

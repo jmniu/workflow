@@ -1,43 +1,38 @@
-package flow_test
+package workflow_test
 
 import (
 	"encoding/json"
 	"fmt"
 	"testing"
 
-	"github.com/jmniu/go-workflow"
-	"github.com/jmniu/go-workflow/service/db"
+	"github.com/jmniu/workflow"
+	"github.com/jmniu/workflow/service/db"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
-	flow.Init(
+    workflow.Init(
 		db.SetDSN("root:111111@tcp(127.0.0.1:3306)/db_flow_github?charset=utf8"),
 		db.SetTrace(false),
 	)
 
-	err := flow.LoadFile("test_data/leave.bpmn")
+	err := workflow.LoadFile("test_data/leave.bpmn")
 	if err != nil {
 		panic(err)
 	}
 
-	err = flow.LoadFile("test_data/apply_sqltest.bpmn")
+	err = workflow.LoadFile("test_data/apply_sqltest.bpmn")
 	if err != nil {
 		panic(err)
 	}
 
-	err = flow.LoadFile("test_data/parallel_test.bpmn")
-	if err != nil {
-		panic(err)
-	}
-
-	err = flow.LoadFile("test_data/repair.bpmn")
+	err = workflow.LoadFile("test_data/parallel_test.bpmn")
 	if err != nil {
 		panic(err)
 	}
 
 	//不支持子流程
-	//err = flow.LoadFile("test_data/childprocess.bpmn")
+	//err = workflow.LoadFile("test_data/childprocess.bpmn")
 	//if err != nil {
 	//	panic(err)
 	//}
@@ -48,7 +43,7 @@ func TestRepair(t *testing.T) {
 	var input = map[string]interface{}{
 		"repair": "niujiaming",
 	}
-	result, err := flow.StartFlow(flowCode, "id_start", "niujiaming", input)
+	result, err := workflow.StartFlow(flowCode, "id_start", "niujiaming", input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -56,13 +51,13 @@ func TestRepair(t *testing.T) {
 
 
 	input["verify"] = "niujiaming"
-	result, err = flow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)
+	result, err = workflow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	input["ok"] = true
-	result, err = flow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)
+	result, err = workflow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -82,7 +77,7 @@ func TestLeaveBzrApprovalPass(t *testing.T) {
 	}
 
 	// 开始流程
-	result, err := flow.StartFlow(flowCode, "node_start", "T001", input)
+	result, err := workflow.StartFlow(flowCode, "node_start", "T001", input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -92,7 +87,7 @@ func TestLeaveBzrApprovalPass(t *testing.T) {
 	}
 
 	// 查询待办
-	todos, err := flow.QueryTodoFlows(flowCode, bzr)
+	todos, err := workflow.QueryTodoFlows(flowCode, bzr)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
@@ -104,7 +99,7 @@ func TestLeaveBzrApprovalPass(t *testing.T) {
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, bzr, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, bzr, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -128,7 +123,7 @@ func TestLeaveBzrApprovalBack(t *testing.T) {
 	}
 
 	// 开始流程
-	result, err := flow.StartFlow(flowCode, "node_start", launcher, input)
+	result, err := workflow.StartFlow(flowCode, "node_start", launcher, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -138,14 +133,14 @@ func TestLeaveBzrApprovalBack(t *testing.T) {
 	}
 
 	// 查询待办
-	todos, err := flow.QueryTodoFlows(flowCode, bzr)
+	todos, err := workflow.QueryTodoFlows(flowCode, bzr)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（退回）
 	input["action"] = "back"
-	result, err = flow.HandleFlow(todos[0].RecordID, bzr, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, bzr, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -156,14 +151,14 @@ func TestLeaveBzrApprovalBack(t *testing.T) {
 	}
 
 	// 查询退回流程
-	todos, err = flow.QueryTodoFlows(flowCode, launcher)
+	todos, err = workflow.QueryTodoFlows(flowCode, launcher)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理退回流程
 	delete(input, "action")
-	result, err = flow.HandleFlow(todos[0].RecordID, launcher, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, launcher, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -173,14 +168,14 @@ func TestLeaveBzrApprovalBack(t *testing.T) {
 	}
 
 	// 查询待办流程
-	todos, err = flow.QueryTodoFlows(flowCode, bzr)
+	todos, err = workflow.QueryTodoFlows(flowCode, bzr)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, bzr, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, bzr, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -206,7 +201,7 @@ func TestLeaveFdyApprovalPass(t *testing.T) {
 	}
 
 	// 开始流程
-	result, err := flow.StartFlow(flowCode, "node_start", launcher, input)
+	result, err := workflow.StartFlow(flowCode, "node_start", launcher, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -216,27 +211,27 @@ func TestLeaveFdyApprovalPass(t *testing.T) {
 	}
 
 	// 查询待办
-	todos, err := flow.QueryTodoFlows(flowCode, bzr)
+	todos, err := workflow.QueryTodoFlows(flowCode, bzr)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, bzr, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, bzr, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	// 查询待办
-	todos, err = flow.QueryTodoFlows(flowCode, fdy)
+	todos, err = workflow.QueryTodoFlows(flowCode, fdy)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, fdy, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, fdy, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -257,7 +252,7 @@ func TestApplySQLPass(t *testing.T) {
 	}
 
 	// 开始流程
-	result, err := flow.StartFlow(flowCode, "node_start", "A001", input)
+	result, err := workflow.StartFlow(flowCode, "node_start", "A001", input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -273,7 +268,7 @@ func TestApplySQLPass(t *testing.T) {
 	)
 	for _, cid := range cIDs {
 		// 查询待办
-		todos, err := flow.QueryTodoFlows(flowCode, cid)
+		todos, err := workflow.QueryTodoFlows(flowCode, cid)
 		if err != nil {
 			t.Fatalf(err.Error())
 		}
@@ -289,7 +284,7 @@ func TestApplySQLPass(t *testing.T) {
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(nodeInstanceID, userID, input)
+	result, err = workflow.HandleFlow(nodeInstanceID, userID, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -310,7 +305,7 @@ func TestParallel(t *testing.T) {
 	}
 
 	// 开始流程
-	result, err := flow.StartFlow(flowCode, "node_start", "H001", input)
+	result, err := workflow.StartFlow(flowCode, "node_start", "H001", input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -324,7 +319,7 @@ func TestParallel(t *testing.T) {
 			t.Fatalf("无效的节点处理人：%v", node.CandidateIDs)
 		}
 
-		todos, err := flow.QueryTodoFlows(flowCode, node.CandidateIDs[0])
+		todos, err := workflow.QueryTodoFlows(flowCode, node.CandidateIDs[0])
 		if err != nil {
 			t.Fatalf(err.Error())
 		} else if len(todos) != 1 {
@@ -333,7 +328,7 @@ func TestParallel(t *testing.T) {
 		}
 
 		input["sign"] = node.CandidateIDs[0]
-		result, err := flow.HandleFlow(todos[0].RecordID, node.CandidateIDs[0], input)
+		result, err := workflow.HandleFlow(todos[0].RecordID, node.CandidateIDs[0], input)
 		if err != nil {
 			t.Fatalf(err.Error())
 		}
@@ -369,7 +364,7 @@ func TestLeaveRepeatedBack(t *testing.T) {
 	}
 
 	// 开始流程
-	result, err := flow.StartFlow(flowCode, "node_start", launcher, input)
+	result, err := workflow.StartFlow(flowCode, "node_start", launcher, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
@@ -379,78 +374,78 @@ func TestLeaveRepeatedBack(t *testing.T) {
 	}
 
 	// 查询待办
-	todos, err := flow.QueryTodoFlows(flowCode, bzr)
+	todos, err := workflow.QueryTodoFlows(flowCode, bzr)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, bzr, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, bzr, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	// 查询待办
-	todos, err = flow.QueryTodoFlows(flowCode, fdy)
+	todos, err = workflow.QueryTodoFlows(flowCode, fdy)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, fdy, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, fdy, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	// 查询待办
-	todos, err = flow.QueryTodoFlows(flowCode, yld)
+	todos, err = workflow.QueryTodoFlows(flowCode, yld)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（退回）
 	input["action"] = "back"
-	result, err = flow.HandleFlow(todos[0].RecordID, fdy, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, fdy, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	// 查询待办
-	todos, err = flow.QueryTodoFlows(flowCode, launcher)
+	todos, err = workflow.QueryTodoFlows(flowCode, launcher)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程
-	result, err = flow.HandleFlow(todos[0].RecordID, fdy, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, fdy, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	// 查询待办
-	todos, err = flow.QueryTodoFlows(flowCode, bzr)
+	todos, err = workflow.QueryTodoFlows(flowCode, bzr)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "pass"
-	result, err = flow.HandleFlow(todos[0].RecordID, bzr, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, bzr, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}
 
 	// 查询待办
-	todos, err = flow.QueryTodoFlows(flowCode, fdy)
+	todos, err = workflow.QueryTodoFlows(flowCode, fdy)
 	if err != nil {
 		t.Fatalf(err.Error())
 	}
 
 	// 处理流程（通过）
 	input["action"] = "back"
-	result, err = flow.HandleFlow(todos[0].RecordID, fdy, input)
+	result, err = workflow.HandleFlow(todos[0].RecordID, fdy, input)
 	if err != nil {
 		t.Fatal(err.Error())
 	}

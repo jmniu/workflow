@@ -29,8 +29,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/jmniu/go-workflow/qlang"
-	_ "github.com/jmniu/go-workflow/qlang/lib/builtin" // 导入 builtin 包
+	"github.com/jmniu/workflow/qlang"
+	_ "github.com/jmniu/workflow/qlang/lib/builtin" // 导入 builtin 包
 )
 
 var strings_Exports = map[string]interface{}{

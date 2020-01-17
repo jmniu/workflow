@@ -5,8 +5,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jmniu/go-workflow/qlang"
-	_ "github.com/jmniu/go-workflow/qlang/lib/builtin"
+	"github.com/jmniu/workflow/qlang"
+	_ "github.com/jmniu/workflow/qlang/lib/builtin"
 )
 
 // -----------------------------------------------------------------------------

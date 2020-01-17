@@ -1,8 +1,8 @@
 package qlang
 
 import (
-	"github.com/jmniu/go-workflow/qlang/exec"
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	"github.com/jmniu/workflow/qlang/exec"
+	qlang "github.com/jmniu/workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

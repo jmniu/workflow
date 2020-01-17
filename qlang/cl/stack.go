@@ -3,7 +3,7 @@ package qlang
 import (
 	"strconv"
 
-	"github.com/jmniu/go-workflow/qlang/exec"
+	"github.com/jmniu/workflow/qlang/exec"
 )
 
 // -----------------------------------------------------------------------------

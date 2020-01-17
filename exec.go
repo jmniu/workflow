@@ -1,10 +1,10 @@
-package flow
+package workflow
 
 import (
 	"context"
 	"encoding/json"
 
-	"github.com/jmniu/go-workflow/expression"
+	"github.com/jmniu/workflow/expression"
 )
 
 // Execer 表达式执行器

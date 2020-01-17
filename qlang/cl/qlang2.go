@@ -3,8 +3,8 @@ package qlang
 import (
 	"strings"
 
-	"github.com/jmniu/go-workflow/qlang/exec"
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	"github.com/jmniu/workflow/qlang/exec"
+	qlang "github.com/jmniu/workflow/qlang/spec"
 
 	ipt "github.com/qiniu/text/tpl/interpreter"
 	"github.com/qiniu/text/tpl/interpreter.util"

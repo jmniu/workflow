@@ -3,9 +3,9 @@ package qlang_test
 import (
 	"testing"
 
-	"github.com/jmniu/go-workflow/qlang"
-	_ "github.com/jmniu/go-workflow/qlang/lib/builtin"
-	ql "github.com/jmniu/go-workflow/qlang/spec"
+	"github.com/jmniu/workflow/qlang"
+	_ "github.com/jmniu/workflow/qlang/lib/builtin"
+	ql "github.com/jmniu/workflow/qlang/spec"
 )
 
 // -----------------------------------------------------------------------------

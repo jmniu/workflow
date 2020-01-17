@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/jmniu/go-workflow/qlang/cmd/qshell"
+	"github.com/jmniu/workflow/qlang/cmd/qshell"
 )
 
 // -----------------------------------------------------------------------------

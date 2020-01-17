@@ -5,7 +5,7 @@
 ``` go
 
     import (
-        "github.com/jmniu/go-workflow/expression"
+        "github.com/jmniu/workflow/expression"
     )
     // db 为已经初始化后的数据库连接
     sql.Reg(db)

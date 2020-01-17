@@ -1,10 +1,10 @@
-package flow
+package workflow
 
 import (
 	"context"
 	"strconv"
 
-	"github.com/jmniu/go-workflow/util"
+	"github.com/jmniu/workflow/util"
 
 	"github.com/beevik/etree"
 )

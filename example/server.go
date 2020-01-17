@@ -6,8 +6,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/jmniu/go-workflow"
-	"github.com/jmniu/go-workflow/service/db"
+	"github.com/jmniu/workflow"
+	"github.com/jmniu/workflow/service/db"
 
 	"github.com/teambition/gear"
 
@@ -29,18 +29,18 @@ func init() {
 func main() {
 	flag.Parse()
 
-	flow.Init(
+    workflow.Init(
 		db.SetDSN(dsn),
 		db.SetTrace(true),
 	)
 
 	serverOptions := []flow.ServerOption{
-		flow.ServerStaticRootOption(staticRoot),
-		flow.ServerPrefixOption("/flow/"),
-		flow.ServerMiddlewareOption(filter),
+	    workflow.ServerStaticRootOption(staticRoot),
+	    workflow.ServerPrefixOption("/flow/"),
+	    workflow.ServerMiddlewareOption(filter),
 	}
 
-	http.Handle("/flow/", flow.StartServer(serverOptions...))
+	http.Handle("/flow/", workflow.StartServer(serverOptions...))
 
 	log.Printf("服务运行在[%s]端口...", addr)
 	log.Fatalf("%v", http.ListenAndServe(addr, nil))

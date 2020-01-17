@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"reflect"
 
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
-	"github.com/jmniu/go-workflow/qlang/spec/types"
+	qlang "github.com/jmniu/workflow/qlang/spec"
+	"github.com/jmniu/workflow/qlang/spec/types"
 )
 
 // -----------------------------------------------------------------------------

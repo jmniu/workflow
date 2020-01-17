@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/workflow/qlang"
 )
 
 type dbkey struct{}

@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/jmniu/go-workflow/expression"
+	"github.com/jmniu/workflow/expression"
 )
 
 func TestMain(m *testing.M) {

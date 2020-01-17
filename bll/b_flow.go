@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jmniu/go-workflow/model"
-	"github.com/jmniu/go-workflow/schema"
-	"github.com/jmniu/go-workflow/util"
+	"github.com/jmniu/workflow/model"
+	"github.com/jmniu/workflow/schema"
+	"github.com/jmniu/workflow/util"
 )
 
 // Flow 流程管理
@@ -34,7 +34,7 @@ func (a *Flow) QueryFlowByCode(flowCode string) ([]*schema.Flow, error) {
 // CreateFlow 创建流程数据
 func (a *Flow) CreateFlow(flow *schema.Flow, nodes *schema.NodeOperating, forms *schema.FormOperating) error {
 	if flow.Flag == 0 {
-		flow.Flag = 1
+	    flow.Flag = 1
 	}
 	return a.FlowModel.CreateFlow(flow, nodes, forms)
 }

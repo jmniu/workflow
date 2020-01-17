@@ -3,7 +3,7 @@ package expression
 import (
 	"context"
 
-	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/workflow/qlang"
 )
 
 // ExpContext 表达式上下文　，实现　context.Context接口

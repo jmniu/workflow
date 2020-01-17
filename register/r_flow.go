@@ -1,8 +1,8 @@
 package register
 
 import (
-	"github.com/jmniu/go-workflow/schema"
-	"github.com/jmniu/go-workflow/service/db"
+	"github.com/jmniu/workflow/schema"
+	"github.com/jmniu/workflow/service/db"
 )
 
 // FlowDBMap 注册流程相关的数据库映射

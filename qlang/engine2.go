@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/jmniu/go-workflow/qlang/exec"
+	"github.com/jmniu/workflow/qlang/exec"
 	"github.com/qiniu/text/tpl/interpreter"
 
-	qcl "github.com/jmniu/go-workflow/qlang/cl"
-	qlang "github.com/jmniu/go-workflow/qlang/spec"
+	qcl "github.com/jmniu/workflow/qlang/cl"
+	qlang "github.com/jmniu/workflow/qlang/spec"
 )
 
 // Options represent interpreter options.

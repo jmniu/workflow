@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/jmniu/go-workflow/expression"
+	"github.com/jmniu/workflow/expression"
 
-	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/workflow/qlang"
 )
 
 // execDB 从ctx获取数据库

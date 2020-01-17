@@ -5,11 +5,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/jmniu/go-workflow/qlang"
-	"github.com/jmniu/go-workflow/qlang/cl/interpreter"
-	"github.com/jmniu/go-workflow/qlang/exec"
-	"github.com/jmniu/go-workflow/qlang/lib/eqlang"
-	"github.com/jmniu/go-workflow/qlang/lib/qlang.all"
+	"github.com/jmniu/workflow/qlang"
+	"github.com/jmniu/workflow/qlang/cl/interpreter"
+	"github.com/jmniu/workflow/qlang/exec"
+	"github.com/jmniu/workflow/qlang/lib/eqlang"
+	"github.com/jmniu/workflow/qlang/lib/qlang.all"
 )
 
 // -----------------------------------------------------------------------------

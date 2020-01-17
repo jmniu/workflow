@@ -3,7 +3,7 @@ package qlang_test
 import (
 	"testing"
 
-	"github.com/jmniu/go-workflow/qlang"
+	"github.com/jmniu/workflow/qlang"
 )
 
 // -----------------------------------------------------------------------------
