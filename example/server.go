@@ -29,15 +29,15 @@ func init() {
 func main() {
 	flag.Parse()
 
-    workflow.Init(
+	workflow.Init(
 		db.SetDSN(dsn),
 		db.SetTrace(true),
 	)
 
 	serverOptions := []flow.ServerOption{
-	    workflow.ServerStaticRootOption(staticRoot),
-	    workflow.ServerPrefixOption("/flow/"),
-	    workflow.ServerMiddlewareOption(filter),
+		workflow.ServerStaticRootOption(staticRoot),
+		workflow.ServerPrefixOption("/flow/"),
+		workflow.ServerMiddlewareOption(filter),
 	}
 
 	http.Handle("/flow/", workflow.StartServer(serverOptions...))

@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"testing"
 
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmniu/workflow"
 	"github.com/jmniu/workflow/service/db"
-	_ "github.com/go-sql-driver/mysql"
 )
 
 func init() {
-    workflow.Init(
+	workflow.Init(
 		db.SetDSN("root:111111@tcp(127.0.0.1:3306)/db_flow_github?charset=utf8"),
 		db.SetTrace(false),
 	)
@@ -48,7 +48,6 @@ func TestRepair(t *testing.T) {
 		t.Fatal(err.Error())
 	}
 	fmt.Printf("%v", result)
-
 
 	input["verify"] = "niujiaming"
 	result, err = workflow.HandleFlow(result.NextNodes[0].NodeInstance.RecordID, "niujiaming", input)

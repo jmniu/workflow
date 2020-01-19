@@ -34,7 +34,7 @@ func (a *Flow) QueryFlowByCode(flowCode string) ([]*schema.Flow, error) {
 // CreateFlow 创建流程数据
 func (a *Flow) CreateFlow(flow *schema.Flow, nodes *schema.NodeOperating, forms *schema.FormOperating) error {
 	if flow.Flag == 0 {
-	    flow.Flag = 1
+		flow.Flag = 1
 	}
 	return a.FlowModel.CreateFlow(flow, nodes, forms)
 }
@@ -235,7 +235,7 @@ func (a *Flow) QueryTodo(typeCode, flowCode, userID string, count int) ([]*schem
 }
 
 // QueryTodoPaginate 分页查询用户待办节点实例数据
-func (a *Flow) QueryTodoPaginate(typeCode string, flowCode string, userID string, page int, pageSize int) (int, []*schema.FlowTodoResult, error)  {
+func (a *Flow) QueryTodoPaginate(typeCode string, flowCode string, userID string, page int, pageSize int) (int, []*schema.FlowTodoResult, error) {
 	return a.FlowModel.QueryTodoPaginate(typeCode, flowCode, userID, page, pageSize)
 }
 

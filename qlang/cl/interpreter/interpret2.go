@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/jmniu/workflow/qlang/exec"
 	"github.com/qiniu/text/tpl"
 	"github.com/qiniu/text/tpl/interpreter"
-	"github.com/jmniu/workflow/qlang/exec"
 )
 
 var (

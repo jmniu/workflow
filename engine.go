@@ -12,12 +12,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/facebookgo/inject"
 	"github.com/jmniu/workflow/bll"
 	"github.com/jmniu/workflow/register"
 	"github.com/jmniu/workflow/schema"
 	"github.com/jmniu/workflow/service/db"
 	"github.com/jmniu/workflow/util"
-	"github.com/facebookgo/inject"
 	"github.com/pkg/errors"
 )
 

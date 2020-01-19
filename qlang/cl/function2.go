@@ -1,8 +1,8 @@
 package qlang
 
 import (
-	"github.com/qiniu/text/tpl/interpreter.util"
 	"github.com/jmniu/workflow/qlang/exec"
+	"github.com/qiniu/text/tpl/interpreter.util"
 )
 
 // -----------------------------------------------------------------------------
