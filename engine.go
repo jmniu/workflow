@@ -641,6 +641,10 @@ func (e *Engine) QueryFlowHistory(flowInstanceID string) ([]*schema.FlowHistoryR
 	return e.flowBll.QueryHistory(flowInstanceID)
 }
 
+func (e *Engine) QueryLastNodeInstance(flowInstanceID string) (*schema.NodeInstance, error) {
+	return e.flowBll.QueryLastNodeInstance(flowInstanceID)
+}
+
 // QueryDoneFlowIDs 查询已办理的流程实例ID列表
 func (e *Engine) QueryDoneFlowIDs(flowCode, userID string) ([]string, error) {
 	return e.flowBll.QueryDoneIDs(flowCode, userID)

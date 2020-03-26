@@ -453,3 +453,8 @@ func TestLeaveRepeatedBack(t *testing.T) {
 		t.Fatalf("无效的下一级流转：%s", result.String())
 	}
 }
+
+func TestQueryLastNodeInstance(t *testing.T) {
+	result, err := workflow.QueryLastNodeInstance("b96558d1-d5e2-4cfe-8602-0dfd6b4be262")
+	fmt.Printf("%v %v\n", result, err)
+}

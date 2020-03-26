@@ -103,6 +103,10 @@ func QueryTodoFlows(flowCode, userID string) ([]*schema.FlowTodoResult, error) {
 	return engine.QueryTodoFlows(flowCode, userID)
 }
 
+func QueryLastNodeInstance(flowInstanceID string) (*schema.NodeInstance, error) {
+	return engine.QueryLastNodeInstance(flowInstanceID)
+}
+
 // QueryTodoFlowsPaginate 分页查询流程待办数据
 // flowCode 流程编号
 // userID 待办人
