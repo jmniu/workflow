@@ -11,31 +11,36 @@ import (
 )
 
 func init() {
+	var err error
 	workflow.Init(
-		db.SetDSN("root:111111@tcp(127.0.0.1:3306)/db_flow_github?charset=utf8"),
+		db.SetDSN("root:GmTech@2019@tcp(192.168.238.178:3306)/db_flow?charset=utf8"),
 		db.SetTrace(false),
 	)
 
-	err := workflow.LoadFile("test_data/leave.bpmn")
-	if err != nil {
-		panic(err)
-	}
-
-	err = workflow.LoadFile("test_data/apply_sqltest.bpmn")
-	if err != nil {
-		panic(err)
-	}
-
-	err = workflow.LoadFile("test_data/parallel_test.bpmn")
-	if err != nil {
-		panic(err)
-	}
-
-	//不支持子流程
-	//err = workflow.LoadFile("test_data/childprocess.bpmn")
+	//err = workflow.LoadFile("test_data/leave.bpmn")
 	//if err != nil {
 	//	panic(err)
 	//}
+	//
+	//err = workflow.LoadFile("test_data/apply_sqltest.bpmn")
+	//if err != nil {
+	//	panic(err)
+	//}
+	//
+	//err = workflow.LoadFile("test_data/parallel_test.bpmn")
+	//if err != nil {
+	//	panic(err)
+	//}
+
+	//err = workflow.LoadFile("test_data/form_test.bpmn")
+	//if err != nil {
+	//	panic(err)
+	//}
+
+	err = workflow.LoadFile("test_data/proc_form.bpmn")
+	if err != nil {
+		panic(err)
+	}
 }
 
 func TestRepair(t *testing.T) {
@@ -457,4 +462,37 @@ func TestLeaveRepeatedBack(t *testing.T) {
 func TestQueryLastNodeInstance(t *testing.T) {
 	result, err := workflow.QueryLastNodeInstance("b96558d1-d5e2-4cfe-8602-0dfd6b4be262")
 	fmt.Printf("%v %v\n", result, err)
+}
+
+
+func TestForm(t *testing.T) {
+	rst, err := workflow.StartFlow("Process_1", "StartEvent_1", "jmniu", nil)
+	if err != nil {
+		fmt.Printf("%v", err)
+		return
+	}
+
+	rst, err = workflow.HandleFlow(rst.FlowInstance.RecordID, "jmniu", nil)
+	if err != nil {
+		fmt.Printf("%v", err)
+		return
+	}
+}
+
+func TestProcForm(t *testing.T) {
+	rst, err := workflow.StartFlow("proc_form", "id_start", "jmniu", map[string]interface{}{
+		"name": "牛家明",
+	})
+	if err != nil {
+		fmt.Printf("%v", err)
+		return
+	}
+
+	rst, err = workflow.HandleFlow(rst.NextNodes[0].NodeInstance.RecordID, "jmniu", map[string]interface{}{
+		"result": "同意",
+	})
+	if err != nil {
+		fmt.Printf("%v", err)
+		return
+	}
 }
